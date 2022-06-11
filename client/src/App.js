@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Documentation from './Documentation';
-import Fib from './Fib';
+import Fib from './Gs';
 
 function App() {
   return (
@@ -14,12 +14,12 @@ function App() {
           
         </header>
         <navigator className="App-navigator">
-        <Link className="App-link" to="/fib">Gs Calc</Link>
+        <Link className="App-link" to="/gs">Gs Calc</Link>
         <Link lassName="App-link" to="/documentation">Dokumentacja</Link>
         </navigator>
         <body className="App-body">
         
-          <Route path="/fib" component={Fib} />
+          <Route path="/gs" component={Fib} />
           <Route path="/documentation" component={Documentation} />
         
         </body>

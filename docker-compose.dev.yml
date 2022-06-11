@@ -16,6 +16,7 @@ services:
       context: ./nginx
     ports:
       - '3050:80'
+    image: kubi8/zadanie2:nginx
   api:
     build:
       dockerfile: Dockerfile.dev
@@ -31,6 +32,7 @@ services:
       - PGDATABASE=postgres
       - PGPASSWORD=postgres_password
       - PGPORT=5432
+    image: kubi8/zadanie2:server
   client:
     stdin_open: true
     build:
@@ -39,6 +41,7 @@ services:
     volumes:
       - /app/node_modules
       - ./client:/app
+    image: kubi8/zadanie2:client
   worker:
     build:
       dockerfile: Dockerfile.dev
@@ -50,3 +53,4 @@ services:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - NODE_OPTIONS=--openssl-legacy-provider
+    image: kubi8/zadanie2:worker
